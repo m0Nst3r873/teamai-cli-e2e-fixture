@@ -1,0 +1,12 @@
+team: my-team
+scope: project
+description: TeamAI shared resources
+repo: https://github.com/m0Nst3r873/teamai-cli-e2e-fixture.git
+provider: github
+sharing:
+  rules:
+    enforced: []
+  docs:
+    localDir: ./.teamai/docs
+  env:
+    injectShellProfile: true
