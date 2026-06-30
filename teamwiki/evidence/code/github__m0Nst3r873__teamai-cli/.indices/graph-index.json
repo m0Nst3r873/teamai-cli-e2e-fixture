@@ -1,6 +1,6 @@
 {
   "schemaVersion": "team-wiki.graph-index.v1",
-  "generatedAt": "2026-06-30T08:31:52.522Z",
+  "generatedAt": "2026-06-30T08:31:52.469Z",
   "nodes": [
     {
       "slug": "component/rebuildWikiIndex",
@@ -927,24 +927,10 @@
       "domain": "src"
     },
     {
-      "slug": "error/TRANSCRIPT_INTERRUPT_PREFIX",
-      "type": "error",
-      "confidence": "INFERRED",
-      "title": "TRANSCRIPT_INTERRUPT_PREFIX",
-      "domain": "src"
-    },
-    {
       "slug": "component/readLastAssistantOutput",
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "readLastAssistantOutput",
-      "domain": "src"
-    },
-    {
-      "slug": "component/countInterventions",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "countInterventions",
       "domain": "src"
     },
     {
@@ -973,13 +959,6 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "rebuildSessions",
-      "domain": "src"
-    },
-    {
-      "slug": "component/aggregateSessionInterventions",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "aggregateSessionInterventions",
       "domain": "src"
     },
     {
@@ -1022,20 +1001,6 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "deepEnrich",
-      "domain": "src"
-    },
-    {
-      "slug": "interface/InterventionSummary",
-      "type": "interface",
-      "confidence": "EXTRACTED",
-      "title": "InterventionSummary",
-      "domain": "src"
-    },
-    {
-      "slug": "component/summarizeInterventions",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "summarizeInterventions",
       "domain": "src"
     },
     {
@@ -2131,20 +2096,6 @@
       "domain": "src"
     },
     {
-      "slug": "component/computeInterventionDelta",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "computeInterventionDelta",
-      "domain": "src"
-    },
-    {
-      "slug": "component/mergeInterventionStats",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "mergeInterventionStats",
-      "domain": "src"
-    },
-    {
       "slug": "component/reportUsageToTeam",
       "type": "component",
       "confidence": "EXTRACTED",
@@ -2530,13 +2481,6 @@
       "domain": "src"
     },
     {
-      "slug": "interface/UserInterventionStats",
-      "type": "interface",
-      "confidence": "EXTRACTED",
-      "title": "UserInterventionStats",
-      "domain": "src"
-    },
-    {
       "slug": "interface/SessionRecord",
       "type": "interface",
       "confidence": "EXTRACTED",
@@ -2625,41 +2569,6 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "DASHBOARD_PID_CHECK_INTERVAL_MS",
-      "domain": "src"
-    },
-    {
-      "slug": "component/CORRECTION_WINDOW_MS",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "CORRECTION_WINDOW_MS",
-      "domain": "src"
-    },
-    {
-      "slug": "component/CORRECTION_KEYWORDS",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "CORRECTION_KEYWORDS",
-      "domain": "src"
-    },
-    {
-      "slug": "component/INTERVENTION_SCAN_MAX_BYTES",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "INTERVENTION_SCAN_MAX_BYTES",
-      "domain": "src"
-    },
-    {
-      "slug": "component/TRANSCRIPT_INTERRUPT_PREFIX",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "TRANSCRIPT_INTERRUPT_PREFIX",
-      "domain": "src"
-    },
-    {
-      "slug": "component/TRANSCRIPT_REJECT_MARKERS",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "TRANSCRIPT_REJECT_MARKERS",
       "domain": "src"
     },
     {
@@ -5412,62 +5321,6 @@
       "confidence": "EXTRACTED",
       "title": "extractTypescript",
       "domain": "src"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/index",
-      "type": "architecture",
-      "confidence": "EXTRACTED",
-      "title": "github__Tencent__teamai-cli code index",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/component",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "component",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/interface",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "interface",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/config",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "config",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/error",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "error",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/relation-src",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "relation-src",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/relation-skills",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "relation-skills",
-      "domain": "code-knowledge"
-    },
-    {
-      "slug": "evidence/code/github__Tencent__teamai-cli/dependency-paths",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "dependency-paths",
-      "domain": "code-knowledge"
     },
     {
       "slug": "evidence/code/github__m0Nst3r873__teamai-cli/index",
@@ -10212,13 +10065,6 @@
     },
     {
       "from": "src/team-push.ts",
-      "to": "src/dashboard-collector.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/team-push.ts",
       "to": "src/utils/git.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -12395,55 +12241,6 @@
       "source": "code-heuristic"
     },
     {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/component",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/interface",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/config",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/error",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/relation-src",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/relation-skills",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "evidence/code/github__Tencent__teamai-cli/index",
-      "to": "evidence/code/github__Tencent__teamai-cli/dependency-paths",
-      "relation": "CONTAINS",
-      "weight": 0.6,
-      "source": "code-heuristic"
-    },
-    {
       "from": "evidence/code/github__m0Nst3r873__teamai-cli/index",
       "to": "evidence/code/github__m0Nst3r873__teamai-cli/component",
       "relation": "CONTAINS",
@@ -12491,111 +12288,6 @@
       "relation": "CONTAINS",
       "weight": 0.6,
       "source": "code-heuristic"
-    },
-    {
-      "from": "config/process.env.TEAMAI_CACHE_DIR",
-      "to": "config/process.env.TEAMAI_CACHE_DIR",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_CACHE_MAX_BYTES",
-      "to": "config/process.env.TEAMAI_CACHE_MAX_BYTES",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.HOME",
-      "to": "config/process.env.HOME",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_RECALL_DISABLED",
-      "to": "config/process.env.TEAMAI_RECALL_DISABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_EVAL_LOG_PATH",
-      "to": "config/process.env.TEAMAI_EVAL_LOG_PATH",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_SEARCH_STRATEGY",
-      "to": "config/process.env.TEAMAI_SEARCH_STRATEGY",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.CLAUDE_SESSION_ID",
-      "to": "config/process.env.CLAUDE_SESSION_ID",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.SHELL",
-      "to": "config/process.env.SHELL",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_MR_HINT_DISABLED",
-      "to": "config/process.env.TEAMAI_MR_HINT_DISABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_MR_HINT_CWD",
-      "to": "config/process.env.TEAMAI_MR_HINT_CWD",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/TEAMAI_CONFIG_PATH",
-      "to": "config/TEAMAI_CONFIG_PATH",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/TEAMAI_ENV_START",
-      "to": "config/TEAMAI_ENV_START",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/TEAMAI_ENV_END",
-      "to": "config/TEAMAI_ENV_END",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/DASHBOARD_DEFAULT_PORT",
-      "to": "config/DASHBOARD_DEFAULT_PORT",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_WIKI_DISABLED",
-      "to": "config/process.env.TEAMAI_WIKI_DISABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_WIKI_ENABLED",
-      "to": "config/process.env.TEAMAI_WIKI_ENABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_HOOKS_DISABLED",
-      "to": "config/process.env.TEAMAI_HOOKS_DISABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_NPM_REGISTRY",
-      "to": "config/process.env.TEAMAI_NPM_REGISTRY",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_DEFAULT_PROVIDER",
-      "to": "config/process.env.TEAMAI_DEFAULT_PROVIDER",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.PATH",
-      "to": "config/process.env.PATH",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.GITHUB_TOKEN",
-      "to": "config/process.env.GITHUB_TOKEN",
-      "relation": "DEPENDS_ON"
     }
   ]
 }
