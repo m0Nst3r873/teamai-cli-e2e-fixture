@@ -1,7 +1,7 @@
 {
   "schemaVersion": "team-wiki.codebase-output-manifest.v2",
   "project": "github__m0Nst3r873__teamai-cli",
-  "generatedAt": "2026-06-30T07:09:22.130Z",
+  "generatedAt": "2026-06-30T07:25:12.626Z",
   "components": [
     {
       "slug": "src",
@@ -10,9 +10,11 @@
       "category": "orchestration",
       "confidence": "INFERRED",
       "responsibilities": [
-        "聚合并索引团队技能/规则/文档/学习等知识资源",
-        "提供多平台Provider适配(GitHub/TGit)的资源同步",
-        "管理本地缓存与搜索索引的生命周期"
+        "团队知识库(wiki/skills/rules/docs)的索引构建与检索",
+        "多 Git 平台(GitHub/TGit)资源同步的 Provider 抽象",
+        "内置 agent/hook/rule/skill 的注册与分发",
+        "本地缓存的生命周期管理(索引/GC/状态查询)",
+        "代码知识图谱的提取与聚合"
       ],
       "entrypoints": [
         "getHandler (src/resources/index.ts:21)",

@@ -1,18 +1,17 @@
 {
-  "domain": "团队知识管理",
-  "description": "跨AI编码工具的团队知识同步与召回CLI",
+  "domain": "知识管理",
+  "description": "团队知识资源同步与AI编码工具召回的CLI工具",
   "keywords": [
-    "teamai",
-    "知识库",
-    "skills",
-    "rules",
-    "docs",
-    "learnings",
-    "recall",
-    "claude-code",
-    "cursor",
-    "团队协作",
-    "知识同步"
+    "团队知识库",
+    "知识召回",
+    "skills同步",
+    "rules管理",
+    "AI编码工具",
+    "Claude Code",
+    "Cursor",
+    "docs同步",
+    "知识图谱",
+    "团队协作"
   ],
   "components": [
     "src"
