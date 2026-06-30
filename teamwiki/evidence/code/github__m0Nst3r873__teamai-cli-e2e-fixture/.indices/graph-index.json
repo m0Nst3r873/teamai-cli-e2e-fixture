@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "team-wiki.graph-index.v1",
+  "generatedAt": "2026-06-30T08:47:03.433Z",
+  "nodes": [
+    {
+      "slug": "evidence/code/github__m0Nst3r873__teamai-cli-e2e-fixture/index",
+      "type": "architecture",
+      "confidence": "EXTRACTED",
+      "title": "github__m0Nst3r873__teamai-cli-e2e-fixture code index",
+      "domain": "code-knowledge"
+    }
+  ],
+  "edges": []
+}

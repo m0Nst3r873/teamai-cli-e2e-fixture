@@ -8,6 +8,8 @@ Last updated: 2026-06-30T07:52:43.690Z
 
 - [github__m0Nst3r873__teamai-cli](./evidence/code/github__m0Nst3r873__teamai-cli/index.md) — 代码知识图谱
 
+- [github__m0Nst3r873__teamai-cli-e2e-fixture](./evidence/code/github__m0Nst3r873__teamai-cli-e2e-fixture/index.md) — 代码知识图谱
+
 ## Navigation
 
 - [router.md](./router.md) — 领域路由入口
