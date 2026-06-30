@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "team-wiki.codebase-output-manifest.v2",
+  "project": "github__m0Nst3r873__teamai-cli",
+  "generatedAt": "2026-06-30T07:09:22.130Z",
+  "components": [
+    {
+      "slug": "src",
+      "docPath": "evidence/code/github__m0Nst3r873__teamai-cli/src.md",
+      "title": "src",
+      "category": "orchestration",
+      "confidence": "INFERRED",
+      "responsibilities": [
+        "聚合并索引团队技能/规则/文档/学习等知识资源",
+        "提供多平台Provider适配(GitHub/TGit)的资源同步",
+        "管理本地缓存与搜索索引的生命周期"
+      ],
+      "entrypoints": [
+        "getHandler (src/resources/index.ts:21)",
+        "getAllHandlers (src/resources/index.ts:25)",
+        "inferDomain (src/utils/search-index.ts:155)",
+        "applyBuiltinOverride (src/builtin-hooks.ts:82)",
+        "applyCodebaseSuggestions (src/codebase.ts:514)"
+      ]
+    }
+  ],
+  "edges": []
+}

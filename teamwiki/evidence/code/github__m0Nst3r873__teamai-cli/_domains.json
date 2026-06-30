@@ -1,0 +1,20 @@
+{
+  "domain": "团队知识管理",
+  "description": "跨AI编码工具的团队知识同步与召回CLI",
+  "keywords": [
+    "teamai",
+    "知识库",
+    "skills",
+    "rules",
+    "docs",
+    "learnings",
+    "recall",
+    "claude-code",
+    "cursor",
+    "团队协作",
+    "知识同步"
+  ],
+  "components": [
+    "src"
+  ]
+}
