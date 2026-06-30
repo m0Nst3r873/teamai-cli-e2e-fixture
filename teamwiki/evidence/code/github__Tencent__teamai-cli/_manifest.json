@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "team-wiki.codebase-output-manifest.v2",
+  "project": "github__Tencent__teamai-cli",
+  "generatedAt": "2026-06-30T07:52:43.656Z",
+  "components": [
+    {
+      "slug": "src",
+      "docPath": "evidence/code/github__Tencent__teamai-cli/src.md",
+      "title": "src",
+      "category": "orchestration",
+      "confidence": "INFERRED",
+      "responsibilities": [
+        "聚合并同步团队规则/技能/文档等资源到 AI 编码工具",
+        "提供多 Git 平台(GitHub/TGit)的统一 provider 抽象",
+        "维护本地缓存索引与搜索索引以支持知识检索"
+      ],
+      "entrypoints": [
+        "getHandler (src/resources/index.ts:21)",
+        "getAllHandlers (src/resources/index.ts:25)",
+        "inferDomain (src/utils/search-index.ts:155)",
+        "applyBuiltinOverride (src/builtin-hooks.ts:82)",
+        "applyCodebaseSuggestions (src/codebase.ts:514)"
+      ]
+    }
+  ],
+  "edges": []
+}
