@@ -5,7 +5,7 @@ domain: code-knowledge
 
 # github__Tencent__teamai-cli
 
-Facts: 1409 | Pages: 7
+Facts: 1483 | Pages: 7
 
 ## Pages
 

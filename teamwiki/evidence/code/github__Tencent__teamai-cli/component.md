@@ -12,6 +12,7 @@ source:
   - tsup.config.ts
   - src/agent-skills.ts
   - src/aggregate.ts
+  - src/api-key.ts
   - src/auto-recall.ts
   - src/builtin-agents.ts
   - src/builtin-hooks.ts
@@ -54,12 +55,15 @@ source:
   - src/init.ts
   - src/iwiki-dual.ts
   - src/known-agents.ts
+  - src/machine-id.ts
   - src/members.ts
   - src/mr-hint.ts
+  - src/openclaw-hooks.ts
   - src/package-info.ts
   - src/pid-monitor.ts
   - src/pull.ts
   - src/push.ts
+  - src/read-only.ts
   - src/recall.ts
   - src/remove.ts
   - src/review-cmd.ts
@@ -69,10 +73,13 @@ source:
   - src/section-patcher.ts
   - src/session-collector.ts
   - src/skill-cmd.ts
+  - src/skill-command.ts
   - src/skill-health.ts
   - src/skill-recommend.ts
+  - src/source-http.ts
   - src/source.ts
   - src/stats.ts
+  - src/status-report.ts
   - src/status.ts
   - src/tags.ts
   - src/team-push.ts
@@ -103,7 +110,6 @@ source:
   - src/resources/marketplace.ts
   - src/resources/rules.ts
   - src/resources/skills.ts
-  - src/resources/wiki.ts
   - src/utils/ai-client.ts
   - src/utils/claudemd.ts
   - src/utils/dedup.ts
@@ -158,11 +164,11 @@ source:
   ```
   export async function rebuildWikiIndex(teamwikiRoot: string): Promise<void> {
   ```
-- `getHandler` ← src/resources/index.ts:21 [EXTRACTED]
+- `getHandler` ← src/resources/index.ts:19 [EXTRACTED]
   ```
   export function getHandler(type: ResourceType): ResourceHandler {
   ```
-- `getAllHandlers` ← src/resources/index.ts:25 [EXTRACTED]
+- `getAllHandlers` ← src/resources/index.ts:23 [EXTRACTED]
   ```
   export function getAllHandlers(): ResourceHandler[] {
   ```
@@ -278,6 +284,18 @@ source:
   ```
   export async function regenerateAggregate(opts: AggregateOptions): Promise<{
   ```
+- `getApiKeyPath` ← src/api-key.ts:20 [EXTRACTED]
+  ```
+  export function getApiKeyPath(): string {
+  ```
+- `resolveApiKey` ← src/api-key.ts:28 [EXTRACTED]
+  ```
+  export function resolveApiKey(): string | null {
+  ```
+- `saveApiKey` ← src/api-key.ts:44 [EXTRACTED]
+  ```
+  export async function saveApiKey(key: string): Promise<void> {
+  ```
 - `isReadOnlyCommand` ← src/auto-recall.ts:50 [EXTRACTED]
   ```
   export function isReadOnlyCommand(command: string): boolean {
@@ -360,11 +378,11 @@ source:
   ```
 - `BUILTIN_SKILL_NAMES` ← src/builtin-skills.ts:41 [EXTRACTED]
   ```
-  export const BUILTIN_SKILL_NAMES = new Set(['teamai-share-learnings', 'teamai-wiki', 'team-wiki-codebase']);
+  export const BUILTIN_SKILL_NAMES = new Set(['teamai-share-learnings', 'team-wiki-codebase']);
   ```
 - `deployBuiltinSkills` ← src/builtin-skills.ts:53 [EXTRACTED]
   ```
-  export async function deployBuiltinSkills(teamConfig: TeamaiConfig, localConfig?: LocalConfig, options?: { skipWiki?: boolean }): Promise<number> {
+  export async function deployBuiltinSkills(teamConfig: TeamaiConfig, localConfig?: LocalConfig, options?: { reportingOnly?: boolean }): Promise<number> {
   ```
 - `cacheCmd` ← src/cache-cmd.ts:57 [EXTRACTED]
   ```
@@ -390,7 +408,7 @@ source:
   ```
   export async function codebaseCmd(opts: CodebaseCmdOptions): Promise<void> {
   ```
-- `extractCodebase` ← src/codebase-extract.ts:510 [EXTRACTED]
+- `extractCodebase` ← src/codebase-extract.ts:512 [EXTRACTED]
   ```
   export async function extractCodebase(opts: ExtractCodebaseOptions): Promise<void> {
   ```
@@ -414,7 +432,7 @@ source:
   ```
   export async function lintTeamwiki(opts: {
   ```
-- `formatWikiLintReport` ← src/codebase-wiki-lint.ts:215 [EXTRACTED]
+- `formatWikiLintReport` ← src/codebase-wiki-lint.ts:216 [EXTRACTED]
   ```
   export function formatWikiLintReport(report: WikiLintReport): string {
   ```
@@ -522,43 +540,51 @@ source:
   ```
   export async function markContributed(sessionId: string): Promise<void> {
   ```
-- `contribute` ← src/contribute.ts:53 [EXTRACTED]
+- `contribute` ← src/contribute.ts:54 [EXTRACTED]
   ```
   export async function contribute(
   ```
-- `readLastAssistantOutput` ← src/dashboard-collector.ts:65 [EXTRACTED]
+- `readLastAssistantOutput` ← src/dashboard-collector.ts:69 [EXTRACTED]
   ```
   export async function readLastAssistantOutput(transcriptPath: string): Promise<string> {
   ```
-- `countInterventions` ← src/dashboard-collector.ts:119 [EXTRACTED]
+- `scanTranscriptStop` ← src/dashboard-collector.ts:143 [EXTRACTED]
+  ```
+  export async function scanTranscriptStop(
+  ```
+- `countInterventions` ← src/dashboard-collector.ts:255 [EXTRACTED]
   ```
   export async function countInterventions(
   ```
-- `parseHookEvent` ← src/dashboard-collector.ts:212 [EXTRACTED]
+- `parseHookEvent` ← src/dashboard-collector.ts:298 [EXTRACTED]
   ```
   export async function parseHookEvent(
   ```
-- `appendEvent` ← src/dashboard-collector.ts:299 [EXTRACTED]
+- `appendEvent` ← src/dashboard-collector.ts:393 [EXTRACTED]
   ```
   export async function appendEvent(event: DashboardEvent): Promise<void> {
   ```
-- `readEvents` ← src/dashboard-collector.ts:319 [EXTRACTED]
+- `readEvents` ← src/dashboard-collector.ts:413 [EXTRACTED]
   ```
   export async function readEvents(eventsPath?: string): Promise<DashboardEvent[]> {
   ```
-- `rebuildSessions` ← src/dashboard-collector.ts:365 [EXTRACTED]
+- `rebuildSessions` ← src/dashboard-collector.ts:459 [EXTRACTED]
   ```
   export function rebuildSessions(events: DashboardEvent[]): DashboardSession[] {
   ```
-- `aggregateSessionInterventions` ← src/dashboard-collector.ts:497 [EXTRACTED]
+- `aggregateSessionMetrics` ← src/dashboard-collector.ts:597 [EXTRACTED]
+  ```
+  export function aggregateSessionMetrics(
+  ```
+- `aggregateSessionInterventions` ← src/dashboard-collector.ts:655 [EXTRACTED]
   ```
   export function aggregateSessionInterventions(
   ```
-- `compactEvents` ← src/dashboard-collector.ts:539 [EXTRACTED]
+- `compactEvents` ← src/dashboard-collector.ts:672 [EXTRACTED]
   ```
   export async function compactEvents(eventsPath?: string): Promise<void> {
   ```
-- `dashboardReport` ← src/dashboard-collector.ts:572 [EXTRACTED]
+- `dashboardReport` ← src/dashboard-collector.ts:705 [EXTRACTED]
   ```
   export async function dashboardReport(toolArg?: string): Promise<void> {
   ```
@@ -574,11 +600,19 @@ source:
   ```
   export async function deepEnrich(opts: DeepEnrichOptions): Promise<void> {
   ```
-- `summarizeInterventions` ← src/digest.ts:259 [EXTRACTED]
+- `summarizeInterventions` ← src/digest.ts:260 [EXTRACTED]
   ```
   export function summarizeInterventions(teamStats: UserStats[]): InterventionSummary | null {
   ```
-- `generateDigest` ← src/digest.ts:298 [EXTRACTED]
+- `formatTokenCount` ← src/digest.ts:309 [EXTRACTED]
+  ```
+  export function formatTokenCount(n: number): string {
+  ```
+- `summarizeConversation` ← src/digest.ts:319 [EXTRACTED]
+  ```
+  export function summarizeConversation(teamStats: UserStats[]): ConversationSummary | null {
+  ```
+- `generateDigest` ← src/digest.ts:345 [EXTRACTED]
   ```
   export async function generateDigest(options: GlobalOptions): Promise<void> {
   ```
@@ -594,7 +628,7 @@ source:
   ```
   export async function enrichWithAI(ctx: EnrichContext): Promise<EnrichResult | null> {
   ```
-- `writeManifest` ← src/enrich-with-ai.ts:195 [EXTRACTED]
+- `writeManifest` ← src/enrich-with-ai.ts:197 [EXTRACTED]
   ```
   export async function writeManifest(manifest: CodebaseOutputManifestV2, outputDir: string): Promise<string> {
   ```
@@ -622,7 +656,7 @@ source:
   ```
   export function createDispatcher(config: DispatcherConfig): Dispatcher {
   ```
-- `buildHandlerRegistry` ← src/hook-handlers.ts:213 [EXTRACTED]
+- `buildHandlerRegistry` ← src/hook-handlers.ts:235 [EXTRACTED]
   ```
   export function buildHandlerRegistry(): HandlerRegistration[] {
   ```
@@ -638,39 +672,39 @@ source:
   ```
   export async function hooksRemove(_options: GlobalOptions): Promise<void> {
   ```
-- `TEAMAI_HOOK_SUBCOMMANDS` ← src/hooks.ts:11 [EXTRACTED]
+- `TEAMAI_HOOK_SUBCOMMANDS` ← src/hooks.ts:22 [EXTRACTED]
   ```
   export const TEAMAI_HOOK_SUBCOMMANDS = ['hook-dispatch'] as const;
   ```
-- `TEAMAI_LEGACY_HOOK_SUBCOMMANDS` ← src/hooks.ts:14 [EXTRACTED]
+- `TEAMAI_LEGACY_HOOK_SUBCOMMANDS` ← src/hooks.ts:25 [EXTRACTED]
   ```
   export const TEAMAI_LEGACY_HOOK_SUBCOMMANDS = ['pull', 'update', 'track', 'track-slash', 'dashboard-report', 'contribute-check', 'auto-recall', 'todowrite-hint', 'mr-hint'] as const;
   ```
-- `reconcileHooks` ← src/hooks.ts:320 [EXTRACTED]
+- `reconcileHooks` ← src/hooks.ts:331 [EXTRACTED]
   ```
   export async function reconcileHooks(
   ```
-- `injectHooks` ← src/hooks.ts:357 [EXTRACTED]
+- `injectHooks` ← src/hooks.ts:368 [EXTRACTED]
   ```
   export async function injectHooks(settingsPath: string, tool?: string): Promise<void> {
   ```
-- `removeHooks` ← src/hooks.ts:362 [EXTRACTED]
+- `removeHooks` ← src/hooks.ts:373 [EXTRACTED]
   ```
   export async function removeHooks(settingsPath: string, tool?: string): Promise<void> {
   ```
-- `getHookStatus` ← src/hooks.ts:371 [EXTRACTED]
+- `getHookStatus` ← src/hooks.ts:382 [EXTRACTED]
   ```
   export async function getHookStatus(settingsPath: string, tool?: string): Promise<HookStatus> {
   ```
-- `injectHooksToAllTools` ← src/hooks.ts:400 [EXTRACTED]
+- `injectHooksToAllTools` ← src/hooks.ts:411 [EXTRACTED]
   ```
   export async function injectHooksToAllTools(toolPaths: Record<string, { settings?: string }>, baseDir?: string): Promise<void> {
   ```
-- `reconcileHooksToAllTools` ← src/hooks.ts:419 [EXTRACTED]
+- `reconcileHooksToAllTools` ← src/hooks.ts:442 [EXTRACTED]
   ```
   export async function reconcileHooksToAllTools(
   ```
-- `reconcileTeamHooksForConfig` ← src/hooks.ts:447 [EXTRACTED]
+- `reconcileTeamHooksForConfig` ← src/hooks.ts:470 [EXTRACTED]
   ```
   export async function reconcileTeamHooksForConfig(
   ```
@@ -698,11 +732,11 @@ source:
   ```
   export async function importFromMR(opts: {
   ```
-- `importFromOrg` ← src/import-org.ts:198 [EXTRACTED]
+- `importFromOrg` ← src/import-org.ts:200 [EXTRACTED]
   ```
   export async function importFromOrg(opts: ImportFromOrgOptions): Promise<void> {
   ```
-- `importFromRepoList` ← src/import-repo-list.ts:66 [EXTRACTED]
+- `importFromRepoList` ← src/import-repo-list.ts:68 [EXTRACTED]
   ```
   export async function importFromRepoList(
   ```
@@ -722,7 +756,7 @@ source:
   ```
   export async function importFromRepo(opts: ImportFromRepoOptions): Promise<void> {
   ```
-- `importCmd` ← src/import.ts:83 [EXTRACTED]
+- `importCmd` ← src/import.ts:80 [EXTRACTED]
   ```
   export async function importCmd(opts: ImportOptions): Promise<void> {
   ```
@@ -730,9 +764,13 @@ source:
   ```
   export function validateScopeMatch(remoteScope: Scope | undefined, localScope: Scope): void {
   ```
-- `init` ← src/init.ts:109 [EXTRACTED]
+- `initHttp` ← src/init.ts:114 [EXTRACTED]
   ```
-  export async function init(options: GlobalOptions & { repo?: string; scope?: string; role?: string; force?: boolean }): Promise<void> {
+  export async function initHttp(
+  ```
+- `init` ← src/init.ts:237 [EXTRACTED]
+  ```
+  export async function init(options: GlobalOptions & { repo?: string; scope?: string; role?: string; force?: boolean; http?: string; token?: string }): Promise<void> {
   ```
 - `importFromIWikiDual` ← src/iwiki-dual.ts:249 [EXTRACTED]
   ```
@@ -745,6 +783,22 @@ source:
 - `detectInstalledAgents` ← src/known-agents.ts:122 [EXTRACTED]
   ```
   export async function detectInstalledAgents(localConfig: LocalConfig, teamConfig: TeamaiConfig): Promise<ResolvedAgent[]> {
+  ```
+- `getMachineId` ← src/machine-id.ts:33 [EXTRACTED]
+  ```
+  export function getMachineId(): string {
+  ```
+- `detectMachineId` ← src/machine-id.ts:40 [EXTRACTED]
+  ```
+  export function detectMachineId(platform: NodeJS.Platform = process.platform): string {
+  ```
+- `deriveLocalAgentId` ← src/machine-id.ts:98 [EXTRACTED]
+  ```
+  export function deriveLocalAgentId(agentType: string, machineId: string, installPath: string): string {
+  ```
+- `deriveInstanceId` ← src/machine-id.ts:106 [EXTRACTED]
+  ```
+  export function deriveInstanceId(agentType: string, localAgentId: string): string {
   ```
 - `getMemberConfig` ← src/members.ts:13 [EXTRACTED]
   ```
@@ -774,6 +828,26 @@ source:
   ```
   export async function mrHint(): Promise<void> {
   ```
+- `OPENCLAW_HOOK_DIR` ← src/openclaw-hooks.ts:23 [EXTRACTED]
+  ```
+  export const OPENCLAW_HOOK_DIR = 'teamai-status-report';
+  ```
+- `handler` ← src/openclaw-hooks.ts:60 [EXTRACTED]
+  ```
+  export default async function handler(ctx: { event?: string } = {}): Promise<void> {
+  ```
+- `async` ← src/openclaw-hooks.ts:60 [INFERRED]
+  ```
+  export default async function handler(ctx: { event?: string } = {}): Promise<void> {
+  ```
+- `injectOpenClawHooks` ← src/openclaw-hooks.ts:79 [EXTRACTED]
+  ```
+  export async function injectOpenClawHooks(hooksDir: string, tool = 'openclaw'): Promise<void> {
+  ```
+- `removeOpenClawHooks` ← src/openclaw-hooks.ts:88 [EXTRACTED]
+  ```
+  export async function removeOpenClawHooks(hooksDir: string): Promise<void> {
+  ```
 - `getCurrentVersion` ← src/package-info.ts:28 [EXTRACTED]
   ```
   export function getCurrentVersion(): string {
@@ -798,31 +872,31 @@ source:
   ```
   export function isProcessAlive(pid: number): boolean {
   ```
-- `filterRulesByKnowledgeNamespaces` ← src/pull.ts:95 [EXTRACTED]
+- `filterRulesByKnowledgeNamespaces` ← src/pull.ts:144 [EXTRACTED]
   ```
   export function filterRulesByKnowledgeNamespaces(
   ```
-- `scanRoleAwareSkills` ← src/pull.ts:109 [EXTRACTED]
+- `scanRoleAwareSkills` ← src/pull.ts:158 [EXTRACTED]
   ```
   export async function scanRoleAwareSkills(localConfig: LocalConfig, namespaces: ResourceNamespaces): Promise<ResourceItem[]> {
   ```
-- `cleanupInactiveNamespaceSkills` ← src/pull.ts:134 [EXTRACTED]
+- `cleanupInactiveNamespaceSkills` ← src/pull.ts:183 [EXTRACTED]
   ```
   export async function cleanupInactiveNamespaceSkills(
   ```
-- `compileCulture` ← src/pull.ts:815 [EXTRACTED]
+- `compileCulture` ← src/pull.ts:832 [EXTRACTED]
   ```
   export function compileCulture(raw: string): string | null {
   ```
-- `compileClaudemd` ← src/pull.ts:883 [EXTRACTED]
+- `compileClaudemd` ← src/pull.ts:900 [EXTRACTED]
   ```
   export function compileClaudemd(contents: string[]): string | null {
   ```
-- `compileRecallRulesBlock` ← src/pull.ts:908 [EXTRACTED]
+- `compileRecallRulesBlock` ← src/pull.ts:925 [EXTRACTED]
   ```
   export function compileRecallRulesBlock(): string {
   ```
-- `pull` ← src/pull.ts:1028 [EXTRACTED]
+- `pull` ← src/pull.ts:1049 [EXTRACTED]
   ```
   export async function pull(options: GlobalOptions): Promise<void> {
   ```
@@ -834,6 +908,10 @@ source:
   ```
   export async function push(options: GlobalOptions & { all?: boolean; role?: string }): Promise<void> {
   ```
+- `assertNotReadOnly` ← src/read-only.ts:10 [EXTRACTED]
+  ```
+  export function assertNotReadOnly(localConfig: LocalConfig, op: string): void {
+  ```
 - `formatResults` ← src/recall.ts:51 [EXTRACTED]
   ```
   export function formatResults(results: ScopedSearchResult[]): string {
@@ -842,11 +920,11 @@ source:
   ```
   export async function autoUpvote(
   ```
-- `recall` ← src/recall.ts:224 [EXTRACTED]
+- `recall` ← src/recall.ts:223 [EXTRACTED]
   ```
   export async function recall(
   ```
-- `remove` ← src/remove.ts:11 [EXTRACTED]
+- `remove` ← src/remove.ts:12 [EXTRACTED]
   ```
   export async function remove(
   ```
@@ -970,6 +1048,14 @@ source:
   ```
   export async function skillShow(name: string, options: GlobalOptions): Promise<void> {
   ```
+- `installSkillZip` ← src/skill-command.ts:116 [EXTRACTED]
+  ```
+  export async function installSkillZip(
+  ```
+- `executeSkillCommand` ← src/skill-command.ts:164 [EXTRACTED]
+  ```
+  export async function executeSkillCommand(cmd: SkillCommand, targetSkillsDir: string): Promise<void> {
+  ```
 - `calculateSkillHealth` ← src/skill-health.ts:21 [EXTRACTED]
   ```
   export function calculateSkillHealth(
@@ -989,6 +1075,22 @@ source:
 - `displayRecommendations` ← src/skill-recommend.ts:76 [EXTRACTED]
   ```
   export function displayRecommendations(
+  ```
+- `RepoNotAvailableError` ← src/source-http.ts:41 [EXTRACTED]
+  ```
+  export class RepoNotAvailableError extends Error {
+  ```
+- `fetchRepoSnapshot` ← src/source-http.ts:54 [EXTRACTED]
+  ```
+  export async function fetchRepoSnapshot(baseUrl: string, apiKey: string): Promise<RepoSnapshot> {
+  ```
+- `materializeHttpRepo` ← src/source-http.ts:103 [EXTRACTED]
+  ```
+  export async function materializeHttpRepo(
+  ```
+- `removeMaterializedSkill` ← src/source-http.ts:129 [EXTRACTED]
+  ```
+  export async function removeMaterializedSkill(localPath: string, slug: string): Promise<void> {
   ```
 - `sourceAdd` ← src/source.ts:111 [EXTRACTED]
   ```
@@ -1022,11 +1124,31 @@ source:
   ```
   export async function showStats(): Promise<void> {
   ```
-- `status` ← src/status.ts:30 [EXTRACTED]
+- `resolveEndpoints` ← src/status-report.ts:56 [EXTRACTED]
+  ```
+  export function resolveEndpoints(): EndpointMap {
+  ```
+- `getReportableAgents` ← src/status-report.ts:77 [EXTRACTED]
+  ```
+  export function getReportableAgents(): Set<string> {
+  ```
+- `resolveReportEndpoint` ← src/status-report.ts:90 [EXTRACTED]
+  ```
+  export function resolveReportEndpoint(localConfig: LocalConfig): string | null {
+  ```
+- `scanReportableSkills` ← src/status-report.ts:125 [EXTRACTED]
+  ```
+  export async function scanReportableSkills(skillsDir: string): Promise<ReportedSkill[]> {
+  ```
+- `runStatusReport` ← src/status-report.ts:219 [EXTRACTED]
+  ```
+  export async function runStatusReport(opts: StatusReportOptions): Promise<void> {
+  ```
+- `status` ← src/status.ts:29 [EXTRACTED]
   ```
   export async function status(options: GlobalOptions): Promise<void> {
   ```
-- `list` ← src/status.ts:140 [EXTRACTED]
+- `list` ← src/status.ts:133 [EXTRACTED]
   ```
   export async function list(type: string | undefined, options: ListOptions): Promise<void> {
   ```
@@ -1050,19 +1172,27 @@ source:
   ```
   export async function tagsRemove(
   ```
-- `mergeStats` ← src/team-push.ts:63 [EXTRACTED]
+- `mergeStats` ← src/team-push.ts:72 [EXTRACTED]
   ```
   export function mergeStats(
   ```
-- `computeInterventionDelta` ← src/team-push.ts:140 [EXTRACTED]
+- `computeInterventionDelta` ← src/team-push.ts:141 [EXTRACTED]
   ```
   export function computeInterventionDelta(
   ```
-- `mergeInterventionStats` ← src/team-push.ts:160 [EXTRACTED]
+- `mergeInterventionStats` ← src/team-push.ts:161 [EXTRACTED]
   ```
   export function mergeInterventionStats(
   ```
-- `reportUsageToTeam` ← src/team-push.ts:183 [EXTRACTED]
+- `computePromptTokenDelta` ← src/team-push.ts:230 [EXTRACTED]
+  ```
+  export function computePromptTokenDelta(
+  ```
+- `mergePromptTokenStats` ← src/team-push.ts:248 [EXTRACTED]
+  ```
+  export function mergePromptTokenStats(
+  ```
+- `reportUsageToTeam` ← src/team-push.ts:271 [EXTRACTED]
   ```
   export async function reportUsageToTeam(
   ```
@@ -1082,267 +1212,275 @@ source:
   ```
   export const ToolPathsSchema = z.object({
   ```
-- `ScopeEnum` ← src/types.ts:19 [EXTRACTED]
+- `ScopeEnum` ← src/types.ts:18 [EXTRACTED]
   ```
   export const ScopeEnum = z.enum(['user', 'project']);
   ```
-- `SharingConfigSchema` ← src/types.ts:24 [EXTRACTED]
+- `SharingConfigSchema` ← src/types.ts:23 [EXTRACTED]
   ```
   export const SharingConfigSchema = z.object({
   ```
-- `getHooksSharing` ← src/types.ts:48 [EXTRACTED]
+- `getHooksSharing` ← src/types.ts:47 [EXTRACTED]
   ```
   export function getHooksSharing(config: { sharing?: { hooks?: { autoApply?: boolean; requireTeamScripts?: boolean } } }): {
   ```
-- `SourceConfigSchema` ← src/types.ts:78 [EXTRACTED]
+- `SourceConfigSchema` ← src/types.ts:77 [EXTRACTED]
   ```
   export const SourceConfigSchema = z.object({
   ```
-- `SOURCE_PULL_TTL_MS` ← src/types.ts:96 [EXTRACTED]
+- `SOURCE_PULL_TTL_MS` ← src/types.ts:95 [EXTRACTED]
   ```
   export const SOURCE_PULL_TTL_MS = 24 * 60 * 60 * 1000;
   ```
-- `TEAMAI_SOURCES_DIR` ← src/types.ts:98 [EXTRACTED]
+- `TEAMAI_SOURCES_DIR` ← src/types.ts:97 [EXTRACTED]
   ```
   export const TEAMAI_SOURCES_DIR = `${process.env.HOME}/.teamai/sources`;
   ```
-- `TeamaiConfigSchema` ← src/types.ts:100 [EXTRACTED]
+- `TeamaiConfigSchema` ← src/types.ts:99 [EXTRACTED]
   ```
   export const TeamaiConfigSchema = z.object({
   ```
-- `MemberConfigSchema` ← src/types.ts:136 [EXTRACTED]
+- `MemberConfigSchema` ← src/types.ts:139 [EXTRACTED]
   ```
   export const MemberConfigSchema = z.object({
   ```
-- `LocalConfigSchema` ← src/types.ts:147 [EXTRACTED]
+- `LocalConfigSchema` ← src/types.ts:150 [EXTRACTED]
   ```
   export const LocalConfigSchema = z.object({
   ```
-- `StateSchema` ← src/types.ts:169 [EXTRACTED]
+- `StateSchema` ← src/types.ts:176 [EXTRACTED]
   ```
   export const StateSchema = z.object({
   ```
-- `TEAMAI_HOME` ← src/types.ts:271 [EXTRACTED]
+- `TEAMAI_HOME` ← src/types.ts:278 [EXTRACTED]
   ```
   export const TEAMAI_HOME = `${process.env.HOME}/.teamai`;
   ```
-- `TEAMAI_STATE_PATH` ← src/types.ts:273 [EXTRACTED]
+- `TEAMAI_STATE_PATH` ← src/types.ts:280 [EXTRACTED]
   ```
   export const TEAMAI_STATE_PATH = `${TEAMAI_HOME}/state.json`;
   ```
-- `TEAMAI_TOKEN_PATH` ← src/types.ts:274 [EXTRACTED]
+- `TEAMAI_TOKEN_PATH` ← src/types.ts:281 [EXTRACTED]
   ```
   export const TEAMAI_TOKEN_PATH = `${TEAMAI_HOME}/token`;
   ```
-- `TEAMAI_UPDATE_LOCK_PATH` ← src/types.ts:275 [EXTRACTED]
+- `TEAMAI_UPDATE_LOCK_PATH` ← src/types.ts:282 [EXTRACTED]
   ```
   export const TEAMAI_UPDATE_LOCK_PATH = `${TEAMAI_HOME}/.update-lock`;
   ```
-- `TEAMAI_RULES_START` ← src/types.ts:279 [EXTRACTED]
+- `TEAMAI_RULES_START` ← src/types.ts:286 [EXTRACTED]
   ```
   export const TEAMAI_RULES_START = '<!-- [teamai:rules:start] -->';
   ```
-- `TEAMAI_RULES_END` ← src/types.ts:280 [EXTRACTED]
+- `TEAMAI_RULES_END` ← src/types.ts:287 [EXTRACTED]
   ```
   export const TEAMAI_RULES_END = '<!-- [teamai:rules:end] -->';
   ```
-- `TEAMAI_HOOK_DESCRIPTION_PREFIX` ← src/types.ts:282 [EXTRACTED]
+- `TEAMAI_HOOK_DESCRIPTION_PREFIX` ← src/types.ts:289 [EXTRACTED]
   ```
   export const TEAMAI_HOOK_DESCRIPTION_PREFIX = '[teamai]';
   ```
-- `TEAMAI_CUSTOM_HOOK_PREFIX` ← src/types.ts:290 [EXTRACTED]
+- `TEAMAI_CUSTOM_HOOK_PREFIX` ← src/types.ts:297 [EXTRACTED]
   ```
   export const TEAMAI_CUSTOM_HOOK_PREFIX = '[teamai:hook:';
   ```
-- `TEAMAI_CULTURE_START` ← src/types.ts:295 [EXTRACTED]
+- `TEAMAI_CULTURE_START` ← src/types.ts:302 [EXTRACTED]
   ```
   export const TEAMAI_CULTURE_START = '<!-- [teamai:culture:start] -->';
   ```
-- `TEAMAI_CULTURE_END` ← src/types.ts:296 [EXTRACTED]
+- `TEAMAI_CULTURE_END` ← src/types.ts:303 [EXTRACTED]
   ```
   export const TEAMAI_CULTURE_END = '<!-- [teamai:culture:end] -->';
   ```
-- `TEAMAI_CLAUDEMD_START` ← src/types.ts:298 [EXTRACTED]
+- `TEAMAI_CLAUDEMD_START` ← src/types.ts:305 [EXTRACTED]
   ```
   export const TEAMAI_CLAUDEMD_START = '<!-- [teamai:claudemd:start] -->';
   ```
-- `TEAMAI_CLAUDEMD_END` ← src/types.ts:299 [EXTRACTED]
+- `TEAMAI_CLAUDEMD_END` ← src/types.ts:306 [EXTRACTED]
   ```
   export const TEAMAI_CLAUDEMD_END = '<!-- [teamai:claudemd:end] -->';
   ```
-- `TEAMAI_RECALL_RULES_START` ← src/types.ts:302 [EXTRACTED]
+- `TEAMAI_RECALL_RULES_START` ← src/types.ts:309 [EXTRACTED]
   ```
   export const TEAMAI_RECALL_RULES_START = '<!-- [teamai:recall-rules:start] -->';
   ```
-- `TEAMAI_RECALL_RULES_END` ← src/types.ts:303 [EXTRACTED]
+- `TEAMAI_RECALL_RULES_END` ← src/types.ts:310 [EXTRACTED]
   ```
   export const TEAMAI_RECALL_RULES_END = '<!-- [teamai:recall-rules:end] -->';
   ```
-- `SKILL_NAME_REGEX` ← src/types.ts:308 [EXTRACTED]
+- `SKILL_NAME_REGEX` ← src/types.ts:315 [EXTRACTED]
   ```
   export const SKILL_NAME_REGEX = /^[a-zA-Z0-9_\-:.]{1,200}$/;
   ```
-- `TEAMAI_USAGE_PATH` ← src/types.ts:310 [EXTRACTED]
+- `TEAMAI_USAGE_PATH` ← src/types.ts:317 [EXTRACTED]
   ```
   export const TEAMAI_USAGE_PATH = `${TEAMAI_HOME}/usage.jsonl`;
   ```
-- `TEAMAI_KNOWN_SKILLS_PATH` ← src/types.ts:311 [EXTRACTED]
+- `TEAMAI_KNOWN_SKILLS_PATH` ← src/types.ts:318 [EXTRACTED]
   ```
   export const TEAMAI_KNOWN_SKILLS_PATH = `${TEAMAI_HOME}/known-skills.json`;
   ```
-- `TEAMAI_PUSHIGNORE_PATH` ← src/types.ts:312 [EXTRACTED]
+- `TEAMAI_PUSHIGNORE_PATH` ← src/types.ts:319 [EXTRACTED]
   ```
   export const TEAMAI_PUSHIGNORE_PATH = `${TEAMAI_HOME}/pushignore`;
   ```
-- `TEAMAI_SESSIONS_DIR` ← src/types.ts:313 [EXTRACTED]
+- `TEAMAI_SESSIONS_DIR` ← src/types.ts:320 [EXTRACTED]
   ```
   export const TEAMAI_SESSIONS_DIR = `${TEAMAI_HOME}/sessions`;
   ```
-- `UsageEventSchema` ← src/types.ts:321 [EXTRACTED]
+- `UsageEventSchema` ← src/types.ts:328 [EXTRACTED]
   ```
   export const UsageEventSchema = z.object({
   ```
-- `DASHBOARD_EVENTS_DIR` ← src/types.ts:454 [EXTRACTED]
+- `emptyTokenUsage` ← src/types.ts:415 [EXTRACTED]
+  ```
+  export function emptyTokenUsage(): TokenUsage {
+  ```
+- `totalTokens` ← src/types.ts:420 [EXTRACTED]
+  ```
+  export function totalTokens(t: TokenUsage | undefined): number {
+  ```
+- `addTokenUsage` ← src/types.ts:426 [EXTRACTED]
+  ```
+  export function addTokenUsage(a: TokenUsage | undefined, b: TokenUsage | undefined): TokenUsage {
+  ```
+- `DASHBOARD_EVENTS_DIR` ← src/types.ts:540 [EXTRACTED]
   ```
   export const DASHBOARD_EVENTS_DIR = `${TEAMAI_HOME}/dashboard`;
   ```
-- `DASHBOARD_EVENTS_PATH` ← src/types.ts:455 [EXTRACTED]
+- `DASHBOARD_EVENTS_PATH` ← src/types.ts:541 [EXTRACTED]
   ```
   export const DASHBOARD_EVENTS_PATH = `${DASHBOARD_EVENTS_DIR}/events.jsonl`;
   ```
-- `DASHBOARD_IDLE_TIMEOUT_MS` ← src/types.ts:458 [EXTRACTED]
+- `DASHBOARD_IDLE_TIMEOUT_MS` ← src/types.ts:544 [EXTRACTED]
   ```
   export const DASHBOARD_IDLE_TIMEOUT_MS = 5 * 60 * 1000;
   ```
-- `DASHBOARD_STALE_TIMEOUT_MS` ← src/types.ts:460 [EXTRACTED]
+- `DASHBOARD_STALE_TIMEOUT_MS` ← src/types.ts:546 [EXTRACTED]
   ```
   export const DASHBOARD_STALE_TIMEOUT_MS = 30 * 60 * 1000;
   ```
-- `DASHBOARD_COMPACTION_THRESHOLD` ← src/types.ts:462 [EXTRACTED]
+- `DASHBOARD_COMPACTION_THRESHOLD` ← src/types.ts:548 [EXTRACTED]
   ```
   export const DASHBOARD_COMPACTION_THRESHOLD = 5_000;
   ```
-- `DASHBOARD_STOPPED_DISPLAY_MS` ← src/types.ts:464 [EXTRACTED]
+- `DASHBOARD_STOPPED_DISPLAY_MS` ← src/types.ts:550 [EXTRACTED]
   ```
   export const DASHBOARD_STOPPED_DISPLAY_MS = 30 * 1000;
   ```
-- `DASHBOARD_PID_CHECK_INTERVAL_MS` ← src/types.ts:466 [EXTRACTED]
+- `DASHBOARD_PID_CHECK_INTERVAL_MS` ← src/types.ts:552 [EXTRACTED]
   ```
   export const DASHBOARD_PID_CHECK_INTERVAL_MS = 15_000;
   ```
-- `CORRECTION_WINDOW_MS` ← src/types.ts:476 [EXTRACTED]
+- `CORRECTION_WINDOW_MS` ← src/types.ts:562 [EXTRACTED]
   ```
   export const CORRECTION_WINDOW_MS = 60 * 1000;
   ```
-- `CORRECTION_KEYWORDS` ← src/types.ts:478 [EXTRACTED]
+- `CORRECTION_KEYWORDS` ← src/types.ts:564 [EXTRACTED]
   ```
   export const CORRECTION_KEYWORDS = [
   ```
-- `INTERVENTION_SCAN_MAX_BYTES` ← src/types.ts:483 [EXTRACTED]
+- `INTERVENTION_SCAN_MAX_BYTES` ← src/types.ts:569 [EXTRACTED]
   ```
   export const INTERVENTION_SCAN_MAX_BYTES = 50 * 1024 * 1024;
   ```
-- `TRANSCRIPT_INTERRUPT_PREFIX` ← src/types.ts:485 [EXTRACTED]
+- `TRANSCRIPT_INTERRUPT_PREFIX` ← src/types.ts:571 [EXTRACTED]
   ```
   export const TRANSCRIPT_INTERRUPT_PREFIX = '[Request interrupted by user';
   ```
-- `TRANSCRIPT_REJECT_MARKERS` ← src/types.ts:487 [EXTRACTED]
+- `TRANSCRIPT_REJECT_MARKERS` ← src/types.ts:573 [EXTRACTED]
   ```
   export const TRANSCRIPT_REJECT_MARKERS = [
   ```
-- `CONTRIBUTE_BASE_THRESHOLD` ← src/types.ts:532 [EXTRACTED]
+- `CONTRIBUTE_BASE_THRESHOLD` ← src/types.ts:618 [EXTRACTED]
   ```
   export const CONTRIBUTE_BASE_THRESHOLD = 15;
   ```
-- `CONTRIBUTE_SMART_THRESHOLD` ← src/types.ts:535 [EXTRACTED]
+- `CONTRIBUTE_SMART_THRESHOLD` ← src/types.ts:621 [EXTRACTED]
   ```
   export const CONTRIBUTE_SMART_THRESHOLD = 35;
   ```
-- `CONTRIBUTE_SCORE_CACHE_MS` ← src/types.ts:538 [EXTRACTED]
+- `CONTRIBUTE_SCORE_CACHE_MS` ← src/types.ts:624 [EXTRACTED]
   ```
   export const CONTRIBUTE_SCORE_CACHE_MS = 6 * 60 * 60 * 1000;
   ```
-- `CONTRIBUTE_KNOWLEDGE_GAP_BONUS` ← src/types.ts:541 [EXTRACTED]
+- `CONTRIBUTE_KNOWLEDGE_GAP_BONUS` ← src/types.ts:627 [EXTRACTED]
   ```
   export const CONTRIBUTE_KNOWLEDGE_GAP_BONUS = 20;
   ```
-- `CONTRIBUTE_LOW_QUALITY_BONUS` ← src/types.ts:544 [EXTRACTED]
+- `CONTRIBUTE_LOW_QUALITY_BONUS` ← src/types.ts:630 [EXTRACTED]
   ```
   export const CONTRIBUTE_LOW_QUALITY_BONUS = 10;
   ```
-- `CONTRIBUTE_LOW_QUALITY_THRESHOLD` ← src/types.ts:547 [EXTRACTED]
+- `CONTRIBUTE_LOW_QUALITY_THRESHOLD` ← src/types.ts:633 [EXTRACTED]
   ```
   export const CONTRIBUTE_LOW_QUALITY_THRESHOLD = 5.0;
   ```
-- `CONTRIBUTE_GIT_COMMIT_DOWNWEIGHT` ← src/types.ts:550 [EXTRACTED]
+- `CONTRIBUTE_GIT_COMMIT_DOWNWEIGHT` ← src/types.ts:636 [EXTRACTED]
   ```
   export const CONTRIBUTE_GIT_COMMIT_DOWNWEIGHT = 0;
   ```
-- `CONTRIBUTE_SESSIONS_DIR` ← src/types.ts:553 [EXTRACTED]
+- `CONTRIBUTE_SESSIONS_DIR` ← src/types.ts:639 [EXTRACTED]
   ```
   export const CONTRIBUTE_SESSIONS_DIR = `${TEAMAI_HOME}/sessions`;
   ```
-- `SEARCH_INDEX_VERSION` ← src/types.ts:621 [EXTRACTED]
+- `SEARCH_INDEX_VERSION` ← src/types.ts:707 [EXTRACTED]
   ```
   export const SEARCH_INDEX_VERSION = 4;
   ```
-- `LEARNINGS_LOCAL_DIR` ← src/types.ts:644 [EXTRACTED]
+- `LEARNINGS_LOCAL_DIR` ← src/types.ts:730 [EXTRACTED]
   ```
   export const LEARNINGS_LOCAL_DIR = `${TEAMAI_HOME}/learnings`;
   ```
-- `SEARCH_INDEX_PATH` ← src/types.ts:645 [EXTRACTED]
+- `SEARCH_INDEX_PATH` ← src/types.ts:731 [EXTRACTED]
   ```
   export const SEARCH_INDEX_PATH = `${TEAMAI_HOME}/search-index.json`;
   ```
-- `VOTES_LOCAL_DIR` ← src/types.ts:646 [EXTRACTED]
+- `VOTES_LOCAL_DIR` ← src/types.ts:732 [EXTRACTED]
   ```
   export const VOTES_LOCAL_DIR = `${TEAMAI_HOME}/votes`;
   ```
-- `CultureCompanySchema` ← src/types.ts:648 [EXTRACTED]
+- `CultureCompanySchema` ← src/types.ts:734 [EXTRACTED]
   ```
   export const CultureCompanySchema = z.object({
   ```
-- `CultureTeamSchema` ← src/types.ts:654 [EXTRACTED]
+- `CultureTeamSchema` ← src/types.ts:740 [EXTRACTED]
   ```
   export const CultureTeamSchema = z.object({
   ```
-- `CultureFrontmatterSchema` ← src/types.ts:659 [EXTRACTED]
+- `CultureFrontmatterSchema` ← src/types.ts:745 [EXTRACTED]
   ```
   export const CultureFrontmatterSchema = z.object({
   ```
-- `resolveBaseDir` ← src/types.ts:672 [EXTRACTED]
+- `resolveBaseDir` ← src/types.ts:758 [EXTRACTED]
   ```
   export function resolveBaseDir(localConfig: LocalConfig): string {
   ```
-- `getTeamaiHome` ← src/types.ts:684 [EXTRACTED]
+- `getTeamaiHome` ← src/types.ts:770 [EXTRACTED]
   ```
   export function getTeamaiHome(scope: Scope, projectRoot?: string): string {
   ```
-- `getConfigPath` ← src/types.ts:694 [EXTRACTED]
+- `getConfigPath` ← src/types.ts:780 [EXTRACTED]
   ```
   export function getConfigPath(scope: Scope, projectRoot?: string): string {
   ```
-- `getStatePath` ← src/types.ts:701 [EXTRACTED]
+- `getStatePath` ← src/types.ts:787 [EXTRACTED]
   ```
   export function getStatePath(scope: Scope, projectRoot?: string): string {
   ```
-- `getManagedHooksPath` ← src/types.ts:710 [EXTRACTED]
+- `getManagedHooksPath` ← src/types.ts:796 [EXTRACTED]
   ```
   export function getManagedHooksPath(scope: Scope, projectRoot?: string): string {
   ```
-- `getPushignorePath` ← src/types.ts:717 [EXTRACTED]
+- `getPushignorePath` ← src/types.ts:803 [EXTRACTED]
   ```
   export function getPushignorePath(): string {
   ```
-- `isWikiEnabled` ← src/types.ts:726 [EXTRACTED]
-  ```
-  export function isWikiEnabled(): boolean {
-  ```
-- `areTeamHooksDisabled` ← src/types.ts:736 [EXTRACTED]
+- `areTeamHooksDisabled` ← src/types.ts:811 [EXTRACTED]
   ```
   export function areTeamHooksDisabled(): boolean {
   ```
-- `uninstall` ← src/uninstall.ts:397 [EXTRACTED]
+- `uninstall` ← src/uninstall.ts:432 [EXTRACTED]
   ```
   export async function uninstall(opts: UninstallOptions): Promise<void> {
   ```
@@ -1698,15 +1836,15 @@ source:
   ```
   export class SkillsHandler extends ResourceHandler {
   ```
-- `WikiHandler` ← src/resources/wiki.ts:35 [EXTRACTED]
+- `getAICliName` ← src/utils/ai-client.ts:120 [EXTRACTED]
   ```
-  export class WikiHandler extends ResourceHandler {
+  export function getAICliName(): string {
   ```
-- `callClaude` ← src/utils/ai-client.ts:128 [EXTRACTED]
+- `callClaude` ← src/utils/ai-client.ts:141 [EXTRACTED]
   ```
   export async function callClaude(
   ```
-- `callClaudeParallel` ← src/utils/ai-client.ts:184 [EXTRACTED]
+- `callClaudeParallel` ← src/utils/ai-client.ts:199 [EXTRACTED]
   ```
   export async function callClaudeParallel<T>(
   ```
@@ -1894,11 +2032,15 @@ source:
   ```
   export function assertSafePath(target: string, allowedRoots: string[]): void {
   ```
-- `defaultAllowedRoots` ← src/utils/path-safety.ts:58 [EXTRACTED]
+- `assertWithinRoot` ← src/utils/path-safety.ts:44 [EXTRACTED]
+  ```
+  export function assertWithinRoot(root: string, candidate: string, message?: string): void {
+  ```
+- `defaultAllowedRoots` ← src/utils/path-safety.ts:80 [EXTRACTED]
   ```
   export function defaultAllowedRoots(): string[] {
   ```
-- `assertSafeResourceName` ← src/utils/path-safety.ts:77 [EXTRACTED]
+- `assertSafeResourceName` ← src/utils/path-safety.ts:99 [EXTRACTED]
   ```
   export function assertSafeResourceName(name: string): void {
   ```

@@ -5,6 +5,7 @@ source:
   - src/providers/github/index.ts
   - src/dashboard-collector.ts
   - src/enrich-with-ai.ts
+  - src/source-http.ts
   - src/utils/ai-client.ts
 ---
 
@@ -18,11 +19,15 @@ source:
   ```
   TRANSCRIPT_INTERRUPT_PREFIX,
   ```
-- `INFERRED` ← src/enrich-with-ai.ts:150 [INFERRED]
+- `INFERRED` ← src/enrich-with-ai.ts:152 [INFERRED]
   ```
   confidence: 'INFERRED' as const,
   ```
-- `AggregateError` ← src/utils/ai-client.ts:204 [EXTRACTED]
+- `RepoNotAvailableError` ← src/source-http.ts:63 [EXTRACTED]
+  ```
+  throw new RepoNotAvailableError(`/repo not available yet (HTTP 404) at ${url}`);
+  ```
+- `AggregateError` ← src/utils/ai-client.ts:219 [EXTRACTED]
   ```
   throw new AggregateError(errors, `${errors.length} AI task(s) failed`);
   ```

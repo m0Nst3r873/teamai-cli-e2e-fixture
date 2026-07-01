@@ -16,6 +16,7 @@ source:
   - src/codebase-lint.ts
   - src/codebase-upgrade-wiki.ts
   - src/codebase-wiki-lint.ts
+  - src/dashboard-collector.ts
   - src/deep-enrich.ts
   - src/digest.ts
   - src/drift-cmd.ts
@@ -32,6 +33,9 @@ source:
   - src/review-store.ts
   - src/roles.ts
   - src/section-patcher.ts
+  - src/skill-command.ts
+  - src/source-http.ts
+  - src/status-report.ts
   - src/status.ts
   - src/types.ts
   - src/update-policy.ts
@@ -196,13 +200,21 @@ source:
   ```
   export interface WikiLintReport {
   ```
+- `TranscriptScanResult` ← src/dashboard-collector.ts:116 [EXTRACTED]
+  ```
+  export interface TranscriptScanResult {
+  ```
 - `DeepEnrichOptions` ← src/deep-enrich.ts:8 [EXTRACTED]
   ```
   export interface DeepEnrichOptions {
   ```
-- `InterventionSummary` ← src/digest.ts:243 [EXTRACTED]
+- `InterventionSummary` ← src/digest.ts:244 [EXTRACTED]
   ```
   export interface InterventionSummary {
+  ```
+- `ConversationSummary` ← src/digest.ts:297 [EXTRACTED]
+  ```
+  export interface ConversationSummary {
   ```
 - `DriftCmdOptions` ← src/drift-cmd.ts:29 [EXTRACTED]
   ```
@@ -240,19 +252,19 @@ source:
   ```
   export interface Dispatcher {
   ```
-- `HookStatus` ← src/hooks.ts:70 [EXTRACTED]
+- `HookStatus` ← src/hooks.ts:81 [EXTRACTED]
   ```
   export type HookStatus = 'installed' | 'missing';
   ```
-- `ReconcileHooksOptions` ← src/hooks.ts:105 [EXTRACTED]
+- `ReconcileHooksOptions` ← src/hooks.ts:116 [EXTRACTED]
   ```
   export interface ReconcileHooksOptions {
   ```
-- `ManagedHookRecord` ← src/hooks.ts:120 [EXTRACTED]
+- `ManagedHookRecord` ← src/hooks.ts:131 [EXTRACTED]
   ```
   export interface ManagedHookRecord {
   ```
-- `ManagedHooksManifest` ← src/hooks.ts:128 [EXTRACTED]
+- `ManagedHooksManifest` ← src/hooks.ts:139 [EXTRACTED]
   ```
   export type ManagedHooksManifest = Record<string, ManagedHookRecord[]>;
   ```
@@ -264,7 +276,7 @@ source:
   ```
   export interface ImportFromRepoListOptions {
   ```
-- `ImportFromRepoListResult` ← src/import-repo-list.ts:31 [EXTRACTED]
+- `ImportFromRepoListResult` ← src/import-repo-list.ts:33 [EXTRACTED]
   ```
   export interface ImportFromRepoListResult {
   ```
@@ -332,155 +344,191 @@ source:
   ```
   export interface ManagedSection {
   ```
-- `ListOptions` ← src/status.ts:22 [EXTRACTED]
+- `SkillCommandType` ← src/skill-command.ts:22 [EXTRACTED]
+  ```
+  export type SkillCommandType = 'install_skill' | 'uninstall_skill' | 'update_skill';
+  ```
+- `SkillCommand` ← src/skill-command.ts:25 [EXTRACTED]
+  ```
+  export interface SkillCommand {
+  ```
+- `RepoFile` ← src/source-http.ts:23 [EXTRACTED]
+  ```
+  export interface RepoFile {
+  ```
+- `RepoSnapshot` ← src/source-http.ts:28 [EXTRACTED]
+  ```
+  export interface RepoSnapshot {
+  ```
+- `EndpointMap` ← src/status-report.ts:38 [EXTRACTED]
+  ```
+  export interface EndpointMap {
+  ```
+- `ReportedSkill` ← src/status-report.ts:99 [EXTRACTED]
+  ```
+  export interface ReportedSkill {
+  ```
+- `StatusReportOptions` ← src/status-report.ts:206 [EXTRACTED]
+  ```
+  export interface StatusReportOptions {
+  ```
+- `ListOptions` ← src/status.ts:21 [EXTRACTED]
   ```
   export interface ListOptions extends GlobalOptions {
   ```
-- `Scope` ← src/types.ts:20 [EXTRACTED]
+- `Scope` ← src/types.ts:19 [EXTRACTED]
   ```
   export type Scope = z.infer<typeof ScopeEnum>;
   ```
-- `SourceConfig` ← src/types.ts:85 [EXTRACTED]
+- `SourceConfig` ← src/types.ts:84 [EXTRACTED]
   ```
   export type SourceConfig = z.infer<typeof SourceConfigSchema>;
   ```
-- `SourceInstallManifest` ← src/types.ts:88 [EXTRACTED]
+- `SourceInstallManifest` ← src/types.ts:87 [EXTRACTED]
   ```
   export interface SourceInstallManifest {
   ```
-- `TeamaiConfig` ← src/types.ts:132 [EXTRACTED]
+- `TeamaiConfig` ← src/types.ts:135 [EXTRACTED]
   ```
   export type TeamaiConfig = z.infer<typeof TeamaiConfigSchema>;
   ```
-- `MemberConfig` ← src/types.ts:143 [EXTRACTED]
+- `MemberConfig` ← src/types.ts:146 [EXTRACTED]
   ```
   export type MemberConfig = z.infer<typeof MemberConfigSchema>;
   ```
-- `LocalConfig` ← src/types.ts:164 [EXTRACTED]
+- `LocalConfig` ← src/types.ts:171 [EXTRACTED]
   ```
   export type LocalConfig = z.infer<typeof LocalConfigSchema>;
   ```
-- `LocalConfigInput` ← src/types.ts:165 [EXTRACTED]
+- `LocalConfigInput` ← src/types.ts:172 [EXTRACTED]
   ```
   export type LocalConfigInput = z.input<typeof LocalConfigSchema>;
   ```
-- `State` ← src/types.ts:181 [EXTRACTED]
+- `State` ← src/types.ts:188 [EXTRACTED]
   ```
   export type State = z.infer<typeof StateSchema>;
   ```
-- `TagsConfig` ← src/types.ts:196 [EXTRACTED]
+- `TagsConfig` ← src/types.ts:203 [EXTRACTED]
   ```
   export interface TagsConfig {
   ```
-- `ResourceType` ← src/types.ts:205 [EXTRACTED]
+- `ResourceType` ← src/types.ts:212 [EXTRACTED]
   ```
-  export type ResourceType = 'skills' | 'rules' | 'docs' | 'env' | 'wiki' | 'agents' | 'hooks';
+  export type ResourceType = 'skills' | 'rules' | 'docs' | 'env' | 'agents' | 'hooks';
   ```
-- `ResourceItemStatus` ← src/types.ts:207 [EXTRACTED]
+- `ResourceItemStatus` ← src/types.ts:214 [EXTRACTED]
   ```
   export type ResourceItemStatus = 'new' | 'modified';
   ```
-- `ResourceItem` ← src/types.ts:209 [EXTRACTED]
+- `ResourceItem` ← src/types.ts:216 [EXTRACTED]
   ```
   export interface ResourceItem {
   ```
-- `ResourceDiff` ← src/types.ts:218 [EXTRACTED]
+- `ResourceDiff` ← src/types.ts:225 [EXTRACTED]
   ```
   export interface ResourceDiff {
   ```
-- `HookDef` ← src/types.ts:234 [EXTRACTED]
+- `HookDef` ← src/types.ts:241 [EXTRACTED]
   ```
   export interface HookDef {
   ```
-- `GlobalOptions` ← src/types.ts:255 [EXTRACTED]
+- `GlobalOptions` ← src/types.ts:262 [EXTRACTED]
   ```
   export interface GlobalOptions {
   ```
-- `UsageEvent` ← src/types.ts:315 [EXTRACTED]
+- `UsageEvent` ← src/types.ts:322 [EXTRACTED]
   ```
   export interface UsageEvent {
   ```
-- `UserStats` ← src/types.ts:329 [EXTRACTED]
+- `UserStats` ← src/types.ts:336 [EXTRACTED]
   ```
   export interface UserStats {
   ```
-- `UserInterventionStats` ← src/types.ts:341 [EXTRACTED]
+- `UserInterventionStats` ← src/types.ts:358 [EXTRACTED]
   ```
   export interface UserInterventionStats {
   ```
-- `SessionRecord` ← src/types.ts:354 [EXTRACTED]
+- `SessionRecord` ← src/types.ts:371 [EXTRACTED]
   ```
   export interface SessionRecord {
   ```
-- `DashboardSessionStatus` ← src/types.ts:381 [EXTRACTED]
+- `TokenUsage` ← src/types.ts:403 [EXTRACTED]
+  ```
+  export interface TokenUsage {
+  ```
+- `SessionMetrics` ← src/types.ts:439 [EXTRACTED]
+  ```
+  export interface SessionMetrics {
+  ```
+- `DashboardSessionStatus` ← src/types.ts:449 [EXTRACTED]
   ```
   export type DashboardSessionStatus = 'running' | 'waiting_for_input' | 'error' | 'idle' | 'stopped';
   ```
-- `DashboardEventType` ← src/types.ts:383 [EXTRACTED]
+- `DashboardEventType` ← src/types.ts:451 [EXTRACTED]
   ```
   export type DashboardEventType = 'session_start' | 'tool_use' | 'prompt_submit' | 'stop' | 'process_exit';
   ```
-- `DashboardEvent` ← src/types.ts:385 [EXTRACTED]
+- `DashboardEvent` ← src/types.ts:453 [EXTRACTED]
   ```
   export interface DashboardEvent {
   ```
-- `DashboardSession` ← src/types.ts:418 [EXTRACTED]
+- `DashboardSession` ← src/types.ts:500 [EXTRACTED]
   ```
   export interface DashboardSession {
   ```
-- `ContributeState` ← src/types.ts:507 [EXTRACTED]
+- `ContributeState` ← src/types.ts:593 [EXTRACTED]
   ```
   export interface ContributeState {
   ```
-- `LearningDocMeta` ← src/types.ts:573 [EXTRACTED]
+- `LearningDocMeta` ← src/types.ts:659 [EXTRACTED]
   ```
   export interface LearningDocMeta {
   ```
-- `KnowledgeType` ← src/types.ts:581 [EXTRACTED]
+- `KnowledgeType` ← src/types.ts:667 [EXTRACTED]
   ```
   export type KnowledgeType = 'learnings' | 'docs' | 'rules' | 'skills';
   ```
-- `KnowledgeDomain` ← src/types.ts:592 [EXTRACTED]
+- `KnowledgeDomain` ← src/types.ts:678 [EXTRACTED]
   ```
   export type KnowledgeDomain = 'technical' | 'ops' | 'support' | 'neutral';
   ```
-- `SearchIndexEntry` ← src/types.ts:595 [EXTRACTED]
+- `SearchIndexEntry` ← src/types.ts:681 [EXTRACTED]
   ```
   export interface SearchIndexEntry {
   ```
-- `SearchIndex` ← src/types.ts:624 [EXTRACTED]
+- `SearchIndex` ← src/types.ts:710 [EXTRACTED]
   ```
   export interface SearchIndex {
   ```
-- `UserVotes` ← src/types.ts:640 [EXTRACTED]
+- `UserVotes` ← src/types.ts:726 [EXTRACTED]
   ```
   export interface UserVotes {
   ```
-- `CultureFrontmatter` ← src/types.ts:663 [EXTRACTED]
+- `CultureFrontmatter` ← src/types.ts:749 [EXTRACTED]
   ```
   export type CultureFrontmatter = z.infer<typeof CultureFrontmatterSchema>;
   ```
-- `MRData` ← src/types.ts:747 [EXTRACTED]
+- `MRData` ← src/types.ts:822 [EXTRACTED]
   ```
   export interface MRData {
   ```
-- `ClassifiedItem` ← src/types.ts:767 [EXTRACTED]
+- `ClassifiedItem` ← src/types.ts:842 [EXTRACTED]
   ```
   export interface ClassifiedItem {
   ```
-- `LearningDraft` ← src/types.ts:789 [EXTRACTED]
+- `LearningDraft` ← src/types.ts:864 [EXTRACTED]
   ```
   export interface LearningDraft {
   ```
-- `CodebaseSuggestion` ← src/types.ts:801 [EXTRACTED]
+- `CodebaseSuggestion` ← src/types.ts:876 [EXTRACTED]
   ```
   export interface CodebaseSuggestion {
   ```
-- `ImportSessionItem` ← src/types.ts:839 [EXTRACTED]
+- `ImportSessionItem` ← src/types.ts:914 [EXTRACTED]
   ```
   export interface ImportSessionItem {
   ```
-- `ImportSession` ← src/types.ts:857 [EXTRACTED]
+- `ImportSession` ← src/types.ts:932 [EXTRACTED]
   ```
   export interface ImportSession {
   ```

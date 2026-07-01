@@ -1,17 +1,17 @@
 {
   "domain": "团队知识管理",
-  "description": "跨AI编码工具的团队知识同步与分发CLI",
+  "description": "跨AI编码工具同步团队技能、规则与文档的CLI工具",
   "keywords": [
     "teamai",
-    "知识同步",
-    "skills",
-    "rules",
-    "hooks",
-    "claude-code",
-    "cursor",
-    "codex",
+    "知识库",
+    "团队协作",
+    "skills同步",
+    "rules管理",
+    "Claude Code",
+    "Cursor",
+    "CodeBuddy",
     "团队规范",
-    "AI编码工具"
+    "AI工具配置"
   ],
   "components": [
     "src"

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "team-wiki.graph-index.v1",
-  "generatedAt": "2026-06-30T08:47:03.524Z",
+  "generatedAt": "2026-07-01T05:21:02.987Z",
   "nodes": [
     {
       "slug": "component/rebuildWikiIndex",
@@ -322,6 +322,34 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "regenerateAggregate",
+      "domain": "src"
+    },
+    {
+      "slug": "component/getApiKeyPath",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "getApiKeyPath",
+      "domain": "src"
+    },
+    {
+      "slug": "component/resolveApiKey",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "resolveApiKey",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_API_TOKEN",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_API_TOKEN",
+      "domain": "src"
+    },
+    {
+      "slug": "component/saveApiKey",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "saveApiKey",
       "domain": "src"
     },
     {
@@ -941,6 +969,20 @@
       "domain": "src"
     },
     {
+      "slug": "interface/TranscriptScanResult",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "TranscriptScanResult",
+      "domain": "src"
+    },
+    {
+      "slug": "component/scanTranscriptStop",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "scanTranscriptStop",
+      "domain": "src"
+    },
+    {
       "slug": "component/countInterventions",
       "type": "component",
       "confidence": "EXTRACTED",
@@ -973,6 +1015,13 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "rebuildSessions",
+      "domain": "src"
+    },
+    {
+      "slug": "component/aggregateSessionMetrics",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "aggregateSessionMetrics",
       "domain": "src"
     },
     {
@@ -1036,6 +1085,27 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "summarizeInterventions",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/ConversationSummary",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "ConversationSummary",
+      "domain": "src"
+    },
+    {
+      "slug": "component/formatTokenCount",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "formatTokenCount",
+      "domain": "src"
+    },
+    {
+      "slug": "component/summarizeConversation",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "summarizeConversation",
       "domain": "src"
     },
     {
@@ -1438,6 +1508,13 @@
       "domain": "src"
     },
     {
+      "slug": "component/initHttp",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "initHttp",
+      "domain": "src"
+    },
+    {
       "slug": "component/init",
       "type": "component",
       "confidence": "EXTRACTED",
@@ -1498,6 +1575,34 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "detectInstalledAgents",
+      "domain": "src"
+    },
+    {
+      "slug": "component/getMachineId",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "getMachineId",
+      "domain": "src"
+    },
+    {
+      "slug": "component/detectMachineId",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "detectMachineId",
+      "domain": "src"
+    },
+    {
+      "slug": "component/deriveLocalAgentId",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "deriveLocalAgentId",
+      "domain": "src"
+    },
+    {
+      "slug": "component/deriveInstanceId",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "deriveInstanceId",
       "domain": "src"
     },
     {
@@ -1575,6 +1680,41 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "mrHint",
+      "domain": "src"
+    },
+    {
+      "slug": "component/OPENCLAW_HOOK_DIR",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "OPENCLAW_HOOK_DIR",
+      "domain": "src"
+    },
+    {
+      "slug": "component/handler",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "handler",
+      "domain": "src"
+    },
+    {
+      "slug": "component/async",
+      "type": "component",
+      "confidence": "INFERRED",
+      "title": "async",
+      "domain": "src"
+    },
+    {
+      "slug": "component/injectOpenClawHooks",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "injectOpenClawHooks",
+      "domain": "src"
+    },
+    {
+      "slug": "component/removeOpenClawHooks",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "removeOpenClawHooks",
       "domain": "src"
     },
     {
@@ -1680,6 +1820,13 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "push",
+      "domain": "src"
+    },
+    {
+      "slug": "component/assertNotReadOnly",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "assertNotReadOnly",
       "domain": "src"
     },
     {
@@ -1977,6 +2124,41 @@
       "domain": "src"
     },
     {
+      "slug": "interface/SkillCommandType",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "SkillCommandType",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/SkillCommand",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "SkillCommand",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_SKILL_DOWNLOAD_HOSTS",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_SKILL_DOWNLOAD_HOSTS",
+      "domain": "src"
+    },
+    {
+      "slug": "component/installSkillZip",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "installSkillZip",
+      "domain": "src"
+    },
+    {
+      "slug": "component/executeSkillCommand",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "executeSkillCommand",
+      "domain": "src"
+    },
+    {
       "slug": "component/calculateSkillHealth",
       "type": "component",
       "confidence": "EXTRACTED",
@@ -2009,6 +2191,55 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "displayRecommendations",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/RepoFile",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "RepoFile",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/RepoSnapshot",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "RepoSnapshot",
+      "domain": "src"
+    },
+    {
+      "slug": "component/RepoNotAvailableError",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "RepoNotAvailableError",
+      "domain": "src"
+    },
+    {
+      "slug": "component/fetchRepoSnapshot",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "fetchRepoSnapshot",
+      "domain": "src"
+    },
+    {
+      "slug": "error/RepoNotAvailableError",
+      "type": "error",
+      "confidence": "EXTRACTED",
+      "title": "RepoNotAvailableError",
+      "domain": "src"
+    },
+    {
+      "slug": "component/materializeHttpRepo",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "materializeHttpRepo",
+      "domain": "src"
+    },
+    {
+      "slug": "component/removeMaterializedSkill",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "removeMaterializedSkill",
       "domain": "src"
     },
     {
@@ -2065,6 +2296,83 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "showStats",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/EndpointMap",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "EndpointMap",
+      "domain": "src"
+    },
+    {
+      "slug": "component/resolveEndpoints",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "resolveEndpoints",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_REPORT_PATHS",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_REPORT_PATHS",
+      "domain": "src"
+    },
+    {
+      "slug": "component/getReportableAgents",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "getReportableAgents",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_REPORT_AGENTS",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_REPORT_AGENTS",
+      "domain": "src"
+    },
+    {
+      "slug": "component/resolveReportEndpoint",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "resolveReportEndpoint",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_REPORT_ENDPOINT",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_REPORT_ENDPOINT",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/ReportedSkill",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "ReportedSkill",
+      "domain": "src"
+    },
+    {
+      "slug": "component/scanReportableSkills",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "scanReportableSkills",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/StatusReportOptions",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "StatusReportOptions",
+      "domain": "src"
+    },
+    {
+      "slug": "component/runStatusReport",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "runStatusReport",
       "domain": "src"
     },
     {
@@ -2142,6 +2450,20 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "mergeInterventionStats",
+      "domain": "src"
+    },
+    {
+      "slug": "component/computePromptTokenDelta",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "computePromptTokenDelta",
+      "domain": "src"
+    },
+    {
+      "slug": "component/mergePromptTokenStats",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "mergePromptTokenStats",
       "domain": "src"
     },
     {
@@ -2544,6 +2866,41 @@
       "domain": "src"
     },
     {
+      "slug": "interface/TokenUsage",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "TokenUsage",
+      "domain": "src"
+    },
+    {
+      "slug": "component/emptyTokenUsage",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "emptyTokenUsage",
+      "domain": "src"
+    },
+    {
+      "slug": "component/totalTokens",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "totalTokens",
+      "domain": "src"
+    },
+    {
+      "slug": "component/addTokenUsage",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "addTokenUsage",
+      "domain": "src"
+    },
+    {
+      "slug": "interface/SessionMetrics",
+      "type": "interface",
+      "confidence": "EXTRACTED",
+      "title": "SessionMetrics",
+      "domain": "src"
+    },
+    {
       "slug": "interface/DashboardSessionStatus",
       "type": "interface",
       "confidence": "EXTRACTED",
@@ -2863,27 +3220,6 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "getPushignorePath",
-      "domain": "src"
-    },
-    {
-      "slug": "component/isWikiEnabled",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "isWikiEnabled",
-      "domain": "src"
-    },
-    {
-      "slug": "config/process.env.TEAMAI_WIKI_DISABLED",
-      "type": "config",
-      "confidence": "EXTRACTED",
-      "title": "process.env.TEAMAI_WIKI_DISABLED",
-      "domain": "src"
-    },
-    {
-      "slug": "config/process.env.TEAMAI_WIKI_ENABLED",
-      "type": "config",
-      "confidence": "EXTRACTED",
-      "title": "process.env.TEAMAI_WIKI_ENABLED",
       "domain": "src"
     },
     {
@@ -3818,17 +4154,17 @@
       "domain": "src"
     },
     {
-      "slug": "component/WikiHandler",
-      "type": "component",
-      "confidence": "EXTRACTED",
-      "title": "WikiHandler",
-      "domain": "src"
-    },
-    {
       "slug": "config/process.env.PATH",
       "type": "config",
       "confidence": "EXTRACTED",
       "title": "process.env.PATH",
+      "domain": "src"
+    },
+    {
+      "slug": "component/getAICliName",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "getAICliName",
       "domain": "src"
     },
     {
@@ -4186,6 +4522,13 @@
       "type": "component",
       "confidence": "EXTRACTED",
       "title": "assertSafePath",
+      "domain": "src"
+    },
+    {
+      "slug": "component/assertWithinRoot",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "assertWithinRoot",
       "domain": "src"
     },
     {
@@ -5470,6 +5813,34 @@
       "domain": "code-knowledge"
     },
     {
+      "slug": "component/isWikiEnabled",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "isWikiEnabled",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_WIKI_DISABLED",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_WIKI_DISABLED",
+      "domain": "src"
+    },
+    {
+      "slug": "config/process.env.TEAMAI_WIKI_ENABLED",
+      "type": "config",
+      "confidence": "EXTRACTED",
+      "title": "process.env.TEAMAI_WIKI_ENABLED",
+      "domain": "src"
+    },
+    {
+      "slug": "component/WikiHandler",
+      "type": "component",
+      "confidence": "EXTRACTED",
+      "title": "WikiHandler",
+      "domain": "src"
+    },
+    {
       "slug": "evidence/code/github__m0Nst3r873__teamai-cli/index",
       "type": "architecture",
       "confidence": "EXTRACTED",
@@ -5606,6 +5977,13 @@
     },
     {
       "from": "src/index.ts",
+      "to": "src/status-report.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/index.ts",
       "to": "src/status.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -5663,6 +6041,13 @@
     {
       "from": "src/index.ts",
       "to": "src/resources/index.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/index.ts",
+      "to": "src/source-http.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -5733,13 +6118,6 @@
     {
       "from": "src/index.ts",
       "to": "src/resources/skills.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/index.ts",
-      "to": "src/resources/wiki.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -6124,195 +6502,6 @@
     },
     {
       "from": "src/resources/index.ts",
-      "to": "src/rebuild-wiki-index.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/index.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/import-iwiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/iwiki-dual.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/resources/wiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/utils/iwiki-client.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/call-chain-tracer.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-graph-overlay.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/doc-graph-extractor.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/interface-scanner.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/knowledge-reconciler.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/manifest-compiler.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/manifest-schema.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/reconciler-v2-types.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/adapters/templates.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/code-collector.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/code-extractors.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/code-graph.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/code-incremental.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/core/graph-index.schema.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/core/wiki-protocol.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/go.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/java.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/python.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/rust.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/index.ts",
       "to": "src/builtin-agents.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -6355,6 +6544,13 @@
     },
     {
       "from": "src/resources/index.ts",
+      "to": "src/openclaw-hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
       "to": "src/resources/hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -6370,6 +6566,20 @@
     {
       "from": "src/resources/index.ts",
       "to": "src/providers/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/reconciler-v2-types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -6601,6 +6811,13 @@
     {
       "from": "src/aggregate.ts",
       "to": "src/utils/team-codebase-paths.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/api-key.ts",
+      "to": "src/utils/fs.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -7013,6 +7230,27 @@
     },
     {
       "from": "src/codebase-cmd.ts",
+      "to": "tsup.config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/codebase-cmd.ts",
+      "to": "src/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/codebase-cmd.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/codebase-cmd.ts",
       "to": "src/codebase-wiki-lint.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -7245,6 +7483,13 @@
     {
       "from": "src/contribute.ts",
       "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/contribute.ts",
+      "to": "src/read-only.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -7567,6 +7812,13 @@
     {
       "from": "src/doctor.ts",
       "to": "src/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/doctor.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -7908,6 +8160,13 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/hook-handlers.ts",
+      "to": "src/status-report.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "src/hooks-cmd.ts",
       "to": "tsup.config.ts",
       "relation": "DEPENDS_ON",
@@ -7945,6 +8204,13 @@
     {
       "from": "src/hooks-cmd.ts",
       "to": "src/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/hooks-cmd.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -8043,6 +8309,13 @@
     {
       "from": "src/hooks.ts",
       "to": "src/resources/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/hooks.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -8560,55 +8833,6 @@
     },
     {
       "from": "src/import.ts",
-      "to": "src/codebase-cmd.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/codebase-extract.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/codebase-lint.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/codebase-upgrade-wiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/codebase-wiki-lint.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/codebase.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
-      "to": "src/utils/team-codebase-paths.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/import.ts",
       "to": "src/import-local.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -8699,6 +8923,20 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/import.ts",
+      "to": "src/codebase-extract.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/graph-aggregate.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "src/init.ts",
       "to": "tsup.config.ts",
       "relation": "DEPENDS_ON",
@@ -8736,6 +8974,13 @@
     {
       "from": "src/init.ts",
       "to": "src/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/init.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -8813,6 +9058,20 @@
     {
       "from": "src/init.ts",
       "to": "src/utils/prompt.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/init.ts",
+      "to": "src/api-key.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/init.ts",
+      "to": "src/source-http.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -8972,6 +9231,20 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/openclaw-hooks.ts",
+      "to": "src/utils/fs.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/openclaw-hooks.ts",
+      "to": "src/utils/logger.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "src/pull.ts",
       "to": "tsup.config.ts",
       "relation": "DEPENDS_ON",
@@ -9092,6 +9365,20 @@
     },
     {
       "from": "src/pull.ts",
+      "to": "src/api-key.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/pull.ts",
+      "to": "src/source-http.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/pull.ts",
       "to": "src/builtin-agents.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -9142,6 +9429,13 @@
     {
       "from": "src/pull.ts",
       "to": "src/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/pull.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -9211,13 +9505,6 @@
     },
     {
       "from": "src/pull.ts",
-      "to": "src/resources/wiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/pull.ts",
       "to": "src/utils/source-conflict.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -9240,6 +9527,13 @@
     {
       "from": "src/push.ts",
       "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/push.ts",
+      "to": "src/read-only.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -9350,6 +9644,34 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/read-only.ts",
+      "to": "src/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/read-only.ts",
+      "to": "src/providers/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/read-only.ts",
+      "to": "src/wiki-engine/reconciler-v2-types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/read-only.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "src/recall.ts",
       "to": "tsup.config.ts",
       "relation": "DEPENDS_ON",
@@ -9443,6 +9765,13 @@
     {
       "from": "src/remove.ts",
       "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/remove.ts",
+      "to": "src/read-only.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -9826,6 +10155,27 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/skill-command.ts",
+      "to": "src/utils/fs.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/skill-command.ts",
+      "to": "src/utils/path-safety.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/skill-command.ts",
+      "to": "src/utils/logger.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "src/skill-health.ts",
       "to": "src/types.ts",
       "relation": "DEPENDS_ON",
@@ -9884,6 +10234,34 @@
     {
       "from": "src/skill-recommend.ts",
       "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/source-http.ts",
+      "to": "src/utils/fs.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/source-http.ts",
+      "to": "src/utils/path-safety.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/source-http.ts",
+      "to": "src/skill-command.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/source-http.ts",
+      "to": "src/utils/logger.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -10031,6 +10409,83 @@
     {
       "from": "src/stats.ts",
       "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "tsup.config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/api-key.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/skill-command.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/providers/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/wiki-engine/reconciler-v2-types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/machine-id.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/status-report.ts",
+      "to": "src/utils/logger.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -10325,6 +10780,13 @@
     {
       "from": "src/uninstall.ts",
       "to": "src/hooks.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/uninstall.ts",
+      "to": "src/openclaw-hooks.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -11563,6 +12025,13 @@
     },
     {
       "from": "src/resources/skills.ts",
+      "to": "src/source-http.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/skills.ts",
       "to": "src/source.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
@@ -11626,112 +12095,7 @@
     },
     {
       "from": "src/resources/skills.ts",
-      "to": "src/resources/wiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/skills.ts",
       "to": "src/utils/source-conflict.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase-cmd.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase-extract.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase-lint.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase-upgrade-wiki.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase-wiki-lint.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/codebase.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/resources/base.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/utils/team-codebase-paths.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/types.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/providers/types.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/wiki-engine/reconciler-v2-types.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/utils/logger.ts",
-      "relation": "DEPENDS_ON",
-      "weight": 0.8,
-      "source": "code-heuristic"
-    },
-    {
-      "from": "src/resources/wiki.ts",
-      "to": "src/utils/fs.ts",
       "relation": "DEPENDS_ON",
       "weight": 0.8,
       "source": "code-heuristic"
@@ -12451,6 +12815,342 @@
       "source": "code-heuristic"
     },
     {
+      "from": "src/index.ts",
+      "to": "src/resources/wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/rebuild-wiki-index.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/index.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/import-iwiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/iwiki-dual.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/resources/wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/utils/iwiki-client.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/call-chain-tracer.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-graph-overlay.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/doc-graph-extractor.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/interface-scanner.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/knowledge-reconciler.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/manifest-compiler.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/manifest-schema.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/adapters/templates.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/code-collector.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/code-extractors.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/code-graph.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/code-incremental.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/core/graph-index.schema.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/core/wiki-protocol.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/config.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/go.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/java.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/python.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/index.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/rust.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/codebase-cmd.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/codebase-lint.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/codebase-upgrade-wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/codebase-wiki-lint.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/codebase.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/import.ts",
+      "to": "src/utils/team-codebase-paths.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/pull.ts",
+      "to": "src/resources/wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/skills.ts",
+      "to": "src/resources/wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase-cmd.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase-extract.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase-lint.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase-upgrade-wiki.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase-wiki-lint.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/codebase.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/resources/base.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/utils/team-codebase-paths.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/providers/types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/wiki-engine/reconciler-v2-types.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/wiki-engine/code-knowledge/extractors/typescript.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/utils/logger.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
+      "from": "src/resources/wiki.ts",
+      "to": "src/utils/fs.ts",
+      "relation": "DEPENDS_ON",
+      "weight": 0.8,
+      "source": "code-heuristic"
+    },
+    {
       "from": "evidence/code/github__m0Nst3r873__teamai-cli/index",
       "to": "evidence/code/github__m0Nst3r873__teamai-cli/component",
       "relation": "CONTAINS",
@@ -12567,16 +13267,6 @@
     {
       "from": "config/DASHBOARD_DEFAULT_PORT",
       "to": "config/DASHBOARD_DEFAULT_PORT",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_WIKI_DISABLED",
-      "to": "config/process.env.TEAMAI_WIKI_DISABLED",
-      "relation": "DEPENDS_ON"
-    },
-    {
-      "from": "config/process.env.TEAMAI_WIKI_ENABLED",
-      "to": "config/process.env.TEAMAI_WIKI_ENABLED",
       "relation": "DEPENDS_ON"
     },
     {
